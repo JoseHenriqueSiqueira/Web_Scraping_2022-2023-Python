@@ -4,7 +4,7 @@
  Obtendo Informações do Campeonato Brasileiro 2022 através de Web Scraping com finalidade de aprendizado.
 </pre>
 ## Requirements
-    -Python 3.9+
+    ![Python](https://img.shields.io/badge/Python-v3.9%2B-blue)
         Requerimentos necessários para main.py
         MODULES
             -selenium
