@@ -1,12 +1,12 @@
 ![Update](https://img.shields.io/badge/update%20data-Dezember%202022-green)
-### Tabela_Brasileirao_2022-Web_Scraping_Python
+# Tabela_Brasileirao_2022-Web_Scraping_Python
 <pre>
  Obtendo Informações do Campeonato Brasileiro 2022 através de Web Scraping com finalidade de aprendizado.
 </pre>
 ## Requirements
 ![Python](https://img.shields.io/badge/Python-v3.9%2B-blue)
-    <pre>
-    Requerimentos necessários para main.py
+### Requerimentos necessários para main.py
+<pre>
     MODULES
         -selenium
         -webdriver_manager
@@ -15,8 +15,10 @@
         -os
     NAVEGADOR
         -Google Chrome
+</pre>
 
-Requerimentos necessários para exemplo.py
+### Requerimentos necessários para exemplo.py
+<pre>
     MODULES
         -PyQt5
         -selenium
@@ -28,4 +30,4 @@ Requerimentos necessários para exemplo.py
         -sys
     NAVEGADOR
         -Google Chrome
-    </pre>
+</pre>
