@@ -5,25 +5,27 @@
 </pre>
 ## Requirements
 ![Python](https://img.shields.io/badge/Python-v3.9%2B-blue)
-        Requerimentos necessários para main.py
-        MODULES
-            -selenium
-            -webdriver_manager
-            -subprocess
-            -time
-            -os
-        NAVEGADOR
-            -Google Chrome
+    <pre>
+    Requerimentos necessários para main.py
+    MODULES
+        -selenium
+        -webdriver_manager
+        -subprocess
+        -time
+        -os
+    NAVEGADOR
+        -Google Chrome
 
-    Requerimentos necessários para exemplo.py
-        MODULES
-            -PyQt5
-            -selenium
-            -webdriver_manager
-            -subprocess
-            -time
-            -threading
-            -os
-            -sys
-        NAVEGADOR
-            -Google Chrome
+Requerimentos necessários para exemplo.py
+    MODULES
+        -PyQt5
+        -selenium
+        -webdriver_manager
+        -subprocess
+        -time
+        -threading
+        -os
+        -sys
+    NAVEGADOR
+        -Google Chrome
+    </pre>
