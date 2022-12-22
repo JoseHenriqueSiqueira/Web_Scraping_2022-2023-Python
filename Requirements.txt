@@ -1,0 +1,22 @@
+Requerimentos necessários para main.py
+    MODULES
+        -selenium
+        -webdriver_manager
+        -subprocess
+        -time
+        -os
+    NAVEGADOR
+        -Google Chrome
+
+Requerimentos necessários para exemplo.py
+    MODULES
+        -PyQt5
+        -selenium
+        -webdriver_manager
+        -subprocess
+        -time
+        -threading
+        -os
+        -sys
+    NAVEGADOR
+        -Google Chrome
