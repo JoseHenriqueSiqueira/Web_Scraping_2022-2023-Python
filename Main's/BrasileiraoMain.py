@@ -9,7 +9,7 @@ import os
 
 def main():
     SERVICE=None
-    wddir = os.environ["USERPROFILE"] + "\.wdm\drivers\chromedriver\win32" #Verificadno se o usuario já tem o chrome web driver baixado
+    wddir = os.environ["USERPROFILE"] + "\.wdm\drivers\chromedriver\win32" #Verificando se o usuário já tem o chrome web driver baixado
     if os.path.exists(wddir):   
             wdname = "chromedriver.exe"
             for root,dir,files in os.walk(wddir):
