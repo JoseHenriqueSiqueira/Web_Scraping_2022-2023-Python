@@ -73,8 +73,7 @@ def main():
         Rodada=Rodada+1
         sleep(0.5)
     print("-----TABELA CLASSIFICAÇÃO-----")
-    for elem in TabelaClassificação:
-        print(elem) #Imprimindo Tabela de Classificação
+    print(*TabelaClassificação, sep="\n")
     Rodada=1
     for elem in TabelaRodadas:
         print("-----RODADA "+str(Rodada)+"-----")
