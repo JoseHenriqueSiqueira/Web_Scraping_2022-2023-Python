@@ -1,4 +1,4 @@
-# Tabela_Brasileirao_2022-Web_Scraping_Python
+# Futebol2022-Web_Scraping_Python
 <pre>
  Obtendo Informações do Campeonato Brasileiro 2022 e Copa do Mundo 2022 através de Web Scraping com finalidade de aprendizado.
 </pre>
