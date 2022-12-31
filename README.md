@@ -1,6 +1,6 @@
 # Futebol2022-Web_Scraping_Python
 <pre>
- Obtendo Informações do Campeonato Brasileiro 2022 e Copa do Mundo 2022 através de Web Scraping com finalidade de aprendizado.
+ Obtendo Informações do Campeonato Brasileiro 2022, Copa do Mundo 2022 e Topônimos/Gentílicos de Países através de Web Scraping com finalidade de aprendizado.
 </pre>
 ![Update](https://img.shields.io/badge/update%20data-28%2F12%2F2022-green)
 <pre>
