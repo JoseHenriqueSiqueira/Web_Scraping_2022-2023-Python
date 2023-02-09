@@ -1,9 +1,10 @@
 # Web_Scraping_2022/2023-Python
-Este repositório é dedicado a obtenção de informações de futebol através de Web Scraping, bem como à geração de bases de dados. As informações incluem:
-•Informações sobre a Copa Do Brasil 2023
-•Informações sobre gentílicos e topônimos de todos os países
-•Informações sobre as oitavas de final até a final da Copa do Mundo 2022
-•Informações sobre o Campeonato Brasileiro 2022
+    Este repositório é dedicado a obtenção de informações de futebol através de Web Scraping, bem como à geração de bases de dados. As informações incluem:
+    •Informações sobre a Copa Do Brasil 2023
+    •Informações sobre gentílicos e topônimos de todos os países
+    •Informações sobre as oitavas de final até a final da Copa do Mundo 2022
+    •Informações sobre o Campeonato Brasileiro 2022
+    
 ![Update](https://img.shields.io/badge/update%20data-09%2F02%2F2023-brightgreen)
 
     Criado o script "WebScrapingFutebol.py", onde possui 4 classes. "CopaDoBrasil2023", "Brasileirão2022", "CopaDoMundo2022" e "ChromeDriver"
