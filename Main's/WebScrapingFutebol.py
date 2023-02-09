@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from subprocess import CREATE_NO_WINDOW
-from time import *
 import os
 
 class ChromeDriver():
@@ -107,6 +106,3 @@ class CopaDoMundo2022(ChromeDriver):
             Dados.append(placar.text.split("\n"))
         return Dados
         
-
-if __name__ == "__main__":
-    pass

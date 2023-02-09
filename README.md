@@ -4,10 +4,11 @@
     •Informações sobre gentílicos e topônimos de todos os países
     •Informações sobre as oitavas de final até a final da Copa do Mundo 2022
     •Informações sobre o Campeonato Brasileiro 2022
-    
+
 ![Update](https://img.shields.io/badge/update%20data-09%2F02%2F2023-brightgreen)
 
     Criado o script "WebScrapingFutebol.py", onde possui 4 classes. "CopaDoBrasil2023", "Brasileirão2022", "CopaDoMundo2022" e "ChromeDriver"
+    ```console
         class CopaDoBrasil2023: Possui um método chamado "Etapa".
             Etapa(etapa:str): Retorna os jogos, chave e placares de uma etapa específica passada como parâmetro pelo usuário
                 'etapa': Parâmetro do tipo STR, aceitando individualmente um dos seguintes valores:
@@ -25,11 +26,10 @@
                     {"Final", "TerceiroLugar", "SemiFinal", "Quartas", "Oitavas"}
         
         class ChromeDriver: Criada para optimizar o código e evitar que o usuário baixe o drive toda vez que for utilizar o script, assim deixando o script mais rapido e mais organizado.
+    ```
 
-        obs: Todos os métodos retornam uma variável do tipo 'list'
-
+        Obs: Todos os métodos retornam uma variável do tipo 'list'
         Removido os arquivos "BrasileiraoMain.py" e "CopaDoMundo22Main.py", pois não são mais necessários no projeto.
-
         Futuros Update: Atualizar os scripts exemplos, melhorar o Script "TopônimosGentílicosPaísesMain.py" (Possivelmente transformá-lo em uma Classe) e adicionar mais WebScraping.
 
 
@@ -45,31 +45,37 @@
 <pre>
     Obtendo informações do Campeonato Brasileiro 2022.
 </pre>
+
 ## Requirements
 ![Python](https://img.shields.io/badge/Python-v3.9-blue)
-### Requerimentos necessários para *Main.py
-<pre>
-    MODULES
-        -selenium
-        -webdriver_manager
-        -subprocess
-        -time
-        -os
-    NAVEGADOR
-        -Google Chrome
-</pre>
+
+### Requerimentos necessários para /Main's
+MODULES
+    [Selenium](https://pypi.org/project/selenium/)
+    [Webdriver_manager](https://pypi.org/project/webdriver-manager/)
+    [Subprocess](https://docs.python.org/3/library/subprocess.html)
+    [Os](https://docs.python.org/3/library/os.html)
+NAVEGADOR
+    [Google Chrome](https://www.google.com/intl/pt-BR/chrome/)
 
 ### Requerimentos necessários para *Exemplo.py
-<pre>
-    MODULES
-        -PyQt5
-        -selenium
-        -webdriver_manager
-        -subprocess
-        -time
-        -threading
-        -os
-        -sys
-    NAVEGADOR
-        -Google Chrome
-</pre>
+MODULES
+    [PyQt5](https://pypi.org/project/PyQt5/)
+    [Selenium](https://pypi.org/project/selenium/)
+    [Webdriver_manager](https://pypi.org/project/webdriver-manager/)
+    [Subprocess](https://docs.python.org/3/library/subprocess.html)
+    [Time](https://docs.python.org/3/library/time.html)
+    [Threading](https://docs.python.org/3/library/threading.html)
+    [os](https://docs.python.org/3/library/os.html)
+    [sys](https://docs.python.org/3/library/sys.html)
+NAVEGADOR
+    [Google Chrome](https://www.google.com/intl/pt-BR/chrome/)
+
+## Autores
+[José Henrique da Silva Siqueira](https://www.linkedin.com/in/jos%C3%A9-henrique-siqueira-852664218/)
+
+## Licensa
+   This project is licensed under the [MIT License](/LICENSE).
+
+## Agradecimentos
+    https://ge.globo.com/ - Site providencia informações sobre diversos campeonatos de futebol, assim sendo usado como base para algumas classes do projeto.
