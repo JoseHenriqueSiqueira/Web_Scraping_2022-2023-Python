@@ -49,26 +49,26 @@
 ![Python](https://img.shields.io/badge/Python-v3.9-blue)
 
 ### Requerimentos necessários para /Main's
-MODULES
-    [Selenium](https://pypi.org/project/selenium/)
-    [Webdriver_manager](https://pypi.org/project/webdriver-manager/)
-    [Subprocess](https://docs.python.org/3/library/subprocess.html)
-    [Os](https://docs.python.org/3/library/os.html)
-NAVEGADOR
-    [Google Chrome](https://www.google.com/intl/pt-BR/chrome/)
+MODULES<\br>
+    [Selenium](https://pypi.org/project/selenium/)<\br>
+    [Webdriver_manager](https://pypi.org/project/webdriver-manager/)<\br>
+    [Subprocess](https://docs.python.org/3/library/subprocess.html)<\br>
+    [Os](https://docs.python.org/3/library/os.html)<\br>
+NAVEGADOR<\br>
+    [Google Chrome](https://www.google.com/intl/pt-BR/chrome/)<\br>
 
 ### Requerimentos necessários para *Exemplo.py
-MODULES
-    [PyQt5](https://pypi.org/project/PyQt5/)
-    [Selenium](https://pypi.org/project/selenium/)
-    [Webdriver_manager](https://pypi.org/project/webdriver-manager/)
-    [Subprocess](https://docs.python.org/3/library/subprocess.html)
-    [Time](https://docs.python.org/3/library/time.html)
-    [Threading](https://docs.python.org/3/library/threading.html)
-    [os](https://docs.python.org/3/library/os.html)
-    [sys](https://docs.python.org/3/library/sys.html)
-NAVEGADOR
-    [Google Chrome](https://www.google.com/intl/pt-BR/chrome/)
+MODULES<\br>
+    [PyQt5](https://pypi.org/project/PyQt5/)<\br>
+    [Selenium](https://pypi.org/project/selenium/)<\br>
+    [Webdriver_manager](https://pypi.org/project/webdriver-manager/)<\br>
+    [Subprocess](https://docs.python.org/3/library/subprocess.html)<\br>
+    [Time](https://docs.python.org/3/library/time.html)<\br>
+    [Threading](https://docs.python.org/3/library/threading.html)<\br>
+    [os](https://docs.python.org/3/library/os.html)<\br>
+    [sys](https://docs.python.org/3/library/sys.html)<\br>
+NAVEGADOR<\br>
+    [Google Chrome](https://www.google.com/intl/pt-BR/chrome/)<\br>
 
 ## Autores
 [José Henrique da Silva Siqueira](https://www.linkedin.com/in/jos%C3%A9-henrique-siqueira-852664218/)
