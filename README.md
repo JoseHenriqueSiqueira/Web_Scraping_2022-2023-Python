@@ -7,8 +7,8 @@
 
 ![Update](https://img.shields.io/badge/update%20data-09%2F02%2F2023-brightgreen)
 
-    Criado o script "WebScrapingFutebol.py", onde possui 4 classes. "CopaDoBrasil2023", "Brasileirão2022", "CopaDoMundo2022" e "ChromeDriver"
-    ```console
+   Criado o script **WebScrapingFutebol.py**, onde possui 4 classes. **CopaDoBrasil2023**, **Brasileirão2022**, **CopaDoMundo2022** e **ChromeDriver**</br>
+   
         class CopaDoBrasil2023: Possui um método chamado "Etapa".
             Etapa(etapa:str): Retorna os jogos, chave e placares de uma etapa específica passada como parâmetro pelo usuário
                 'etapa': Parâmetro do tipo STR, aceitando individualmente um dos seguintes valores:
@@ -26,8 +26,7 @@
                     {"Final", "TerceiroLugar", "SemiFinal", "Quartas", "Oitavas"}
         
         class ChromeDriver: Criada para optimizar o código e evitar que o usuário baixe o drive toda vez que for utilizar o script, assim deixando o script mais rapido e mais organizado.
-    ```
-
+        
         Obs: Todos os métodos retornam uma variável do tipo 'list'
         Removido os arquivos "BrasileiraoMain.py" e "CopaDoMundo22Main.py", pois não são mais necessários no projeto.
         Futuros Update: Atualizar os scripts exemplos, melhorar o Script "TopônimosGentílicosPaísesMain.py" (Possivelmente transformá-lo em uma Classe) e adicionar mais WebScraping.
