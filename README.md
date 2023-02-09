@@ -77,4 +77,4 @@ NAVEGADOR
    This project is licensed under the [MIT License](/LICENSE).
 
 ## Agradecimentos
-    https://ge.globo.com/ - Site providencia informações sobre diversos campeonatos de futebol, assim sendo usado como base para algumas classes do projeto.
+[Globo Esporte](https://ge.globo.com/) - Site providencia informações sobre diversos campeonatos de futebol, assim sendo usado como base para algumas classes do projeto.
