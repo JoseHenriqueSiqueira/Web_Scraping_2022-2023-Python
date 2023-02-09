@@ -69,7 +69,7 @@
 ## Autores
 [José Henrique da Silva Siqueira](https://www.linkedin.com/in/jos%C3%A9-henrique-siqueira-852664218/)
 
-## Licensa
+## Licença
    This project is licensed under the [MIT License](/LICENSE).
 
 ## Agradecimentos
