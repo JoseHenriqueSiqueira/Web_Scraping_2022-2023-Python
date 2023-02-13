@@ -1,9 +1,22 @@
 # Web_Scraping_2022/2023-Python
-    Este repositório é dedicado a obtenção de informações de futebol através de Web Scraping, bem como à geração de bases de dados. As informações incluem:
-    •Informações sobre a Copa Do Brasil 2023
-    •Informações sobre gentílicos e topônimos de todos os países
-    •Informações sobre as oitavas de final até a final da Copa do Mundo 2022
-    •Informações sobre o Campeonato Brasileiro 2022
+Este repositório é destinado ao aprendizado e demonstração de técnicas de Web Scraping em Python, usando como exemplo sites de futebol e de gentilicos. Aqui, você poderá encontrar informações relevantes sobre a Copa do Brasil 2023, como resultados e classificações, assim como dados sobre os gentilicos e topônimos de todos os países do mundo. Além disso, também serão disponibilizadas informações detalhadas sobre a evolução do Campeonato Brasileiro 2022 e da Copa do Mundo 2022, desde as oitavas de final até a grande final. Este repositório é uma excelente fonte de conhecimento para aqueles que desejam se aprofundar no uso de Web Scraping com Python.
+
+![Update](https://img.shields.io/badge/update%20data-13%2F02%2F2023-brightgreen)
+
+   Criado o script **TopônimosGentílicosPaíses.py**, onde possui 1 classe. **TopônimosGentilicos**</br>
+
+        class TopônimosGentilicos: Possui dois métodos, um chamado "informacoes_completas" e "procurar_pais".
+            informacoes_completas(): Retorna uma list com  a "Forma breve", "Nome oficial", "Capital" e	"Gentílico" de TODOS os países.
+            procurar_pais(NomeDoPais:str): Retorna uma list com  a "Forma breve", "Nome oficial", "Capital" e "Gentílico" do país passado como parâmetro pelo o usuário.
+
+   Criado o script **ChromeWebDriver.py**, onde possui 1 classe. **ChromeDriver**</br>
+   Obs: Essa mudança é para tornar mais organizado, assim não precisando criar essa mesma classe para cada script.
+
+        class ChromeDriver: Criada para optimizar o código e evitar que o usuário baixe o driver toda vez que for utilizar o script, assim deixando o script mais rapido e mais organizado.
+
+Removido a classe **ChromeDriver** do script **WebScrapingFutebol**
+Removido os scripts de Exemplos. Eles não estavam bem programados, e não tinha muita utilidade. Caso algum usuário necessite um exemplo, eu adiciono ao repositório.
+
 
 ![Update](https://img.shields.io/badge/update%20data-09%2F02%2F2023-brightgreen)
 
@@ -25,7 +38,7 @@
                 'etapa': Parâmetro do tipo STR, aceitando individualmente um dos seguintes valores:
                     {"Final", "TerceiroLugar", "SemiFinal", "Quartas", "Oitavas"}
         
-        class ChromeDriver: Criada para optimizar o código e evitar que o usuário baixe o drive toda vez que for utilizar o script, assim deixando o script mais rapido e mais organizado.
+        class ChromeDriver: Criada para optimizar o código e evitar que o usuário baixe o driver toda vez que for utilizar o script, assim deixando o script mais rapido e mais organizado.
         
         Obs: Todos os métodos retornam uma variável do tipo 'list'
         Removido os arquivos "BrasileiraoMain.py" e "CopaDoMundo22Main.py", pois não são mais necessários no projeto.
