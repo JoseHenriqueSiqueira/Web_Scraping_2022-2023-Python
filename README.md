@@ -5,17 +5,17 @@ Este repositório é destinado ao aprendizado e demonstração de técnicas de W
 
    Criado o script **TopônimosGentílicosPaíses.py**, onde possui 1 classe. **TopônimosGentilicos**</br>
 
-        class TopônimosGentilicos: Possui dois métodos, um chamado "informacoes_completas" e "procurar_pais".
-            informacoes_completas(): Retorna uma list com  a "Forma breve", "Nome oficial", "Capital" e	"Gentílico" de TODOS os países.
+       class TopônimosGentilicos: Possui dois métodos, um chamado "informacoes_completas" e "procurar_pais".
+            informacoes_completas(): Retorna uma list com  a "Forma breve", "Nome oficial", "Capital" e  "Gentílico" de TODOS os países.
             procurar_pais(NomeDoPais:str): Retorna uma list com  a "Forma breve", "Nome oficial", "Capital" e "Gentílico" do país passado como parâmetro pelo o usuário.
 
    Criado o script **ChromeWebDriver.py**, onde possui 1 classe. **ChromeDriver**</br>
-   Obs: Essa mudança é para tornar mais organizado, assim não precisando criar essa mesma classe para cada script.
+        Obs: Essa mudança é para tornar mais organizado, assim não precisando criar essa mesma classe para cada script.
 
         class ChromeDriver: Criada para optimizar o código e evitar que o usuário baixe o driver toda vez que for utilizar o script, assim deixando o script mais rapido e mais organizado.
 
-Removido a classe **ChromeDriver** do script **WebScrapingFutebol**
-Removido os scripts de Exemplos. Eles não estavam bem programados, e não tinha muita utilidade. Caso algum usuário necessite um exemplo, eu adiciono ao repositório.
+         Removido a classe "ChromeDriver" do script "WebScrapingFutebol"
+         Removido os scripts de Exemplos. Eles não estavam bem programados, e não tinha muita utilidade. Caso algum usuário necessite um exemplo, eu adiciono ao repositório.
 
 
 ![Update](https://img.shields.io/badge/update%20data-09%2F02%2F2023-brightgreen)
