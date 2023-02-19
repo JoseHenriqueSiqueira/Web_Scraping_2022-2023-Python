@@ -1,5 +1,26 @@
 # Web_Scraping_2022/2023-Python
-Este repositório é destinado ao aprendizado e demonstração de técnicas de Web Scraping em Python, usando como exemplo sites de futebol e de gentilicos. Aqui, você poderá encontrar informações relevantes sobre a Copa do Brasil 2023, como resultados e classificações, assim como dados sobre os gentilicos e topônimos de todos os países do mundo. Além disso, também serão disponibilizadas informações detalhadas sobre a evolução do Campeonato Brasileiro 2022 e da Copa do Mundo 2022, desde as oitavas de final até a grande final. Este repositório é uma excelente fonte de conhecimento para aqueles que desejam se aprofundar no uso de Web Scraping com Python.
+Este repositório tem como objetivo fornecer exemplos e técnicas de Web Scraping em Python, utilizando campeonatos de futebol e informações de países como casos de estudo. Aqui você pode aprender como obter informações para atender às suas necessidades, seja para criar um banco de dados, gerar gráficos ou fazer análises. Não esqueça de deixar seu feedback!!
+
+![Update](https://img.shields.io/badge/update%20data-19%2F02%2F2023-brightgreen)
+
+   Resumo: Esse update deixou mais poderosas as classes que obtêm os dados do Brasileirão e da Copa do Mundo. Agora, em vez de ser possível obter apenas os dados de 2022, é possível obter os dados de diversas outras edições. Apesar de não ter havido uma mudança tão grande no código, a lógica foi aprimorada e melhorada!
+   Duas classes criadas no *WebScrapingFutebol.py*. **Brasileirao** e **CopaDoMundo**</br>
+
+       class Brasileirao(ano:str): Possui um parâmetro obrigatório 'ano'. Possui dois métodos, um chamado "tabela_classificacao" e "rodadas".
+          'ano': parâmetro do tipo STR, aceitando valores de '2003' a '2023'. Esse parâmetro é responsavel por qual edição do Brasileirão você quer ter informações.
+                tabela_classificacao(): Esse método retorna a tabela geral de classificação dos times.
+                rodadas(rodada:int): Esse método retorna todos os placares da rodada passada como parâmetro pelo usuário.
+                    'rodada': parâmetro do tipo INT, aceitando valores de '1' a '38'.
+
+       class CopaDoMundo(ano:str): Possui um parâmetro obrigatório 'ano'. Possui dois métodos, um chamado "fase_de_grupos" e "eliminatorias".
+          'ano': parâmetro do tipo STR, aceitando valores de '1986' a '2022'. Os valores devem ser fornecidos em intervalos de quatro em quatro anos. Por exemplo. '1986', '1990', '1994', etc. Esse parâmetro é responsavel por qual edição da Copa Do Mundo você quer ter informações.
+                fase_de_grupos(): Esse método retorna a classificação geral e pontos gerais de todos os grupos da Copa Do Mundo.
+                eliminatorias(etapa:str): Retorna os jogos e placares de uma etapa específica passada como parâmetro pelo usuário
+                    'etapa': Parâmetro do tipo STR, aceitando individualmente um dos seguintes valores:
+                        {"Final", "TerceiroLugar", "SemiFinal", "Quartas", "Oitavas"}
+
+Removido as classe **Brasileirão2022**  e **CopaDoMundo2022** do script *WebScrapingFutebol.py*
+Optimização das demais classes e métodos
 
 ![Update](https://img.shields.io/badge/update%20data-13%2F02%2F2023-brightgreen)
 
