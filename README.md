@@ -3,7 +3,7 @@ Este repositório tem como objetivo fornecer exemplos e técnicas de Web Scrapin
 
 ![Update](https://img.shields.io/badge/update%20data-19%2F02%2F2023-brightgreen)
 
-   Resumo: Esse update deixou mais poderosas as classes que obtêm os dados do Brasileirão e da Copa do Mundo. Agora, em vez de ser possível obter apenas os dados de 2022, é possível obter os dados de diversas outras edições. Apesar de não ter havido uma mudança tão grande no código, a lógica foi aprimorada e melhorada!
+   Resumo: Esse update deixou mais poderosas as classes que obtêm os dados do Brasileirão e da Copa do Mundo. Agora, em vez de ser possível obter apenas os dados de 2022, é possível obter os dados de diversas outras edições. Apesar de não ter havido uma mudança tão grande no código, a lógica foi aprimorada e melhorada!</br>
    Duas classes criadas no *WebScrapingFutebol.py*. **Brasileirao** e **CopaDoMundo**</br>
 
        class Brasileirao(ano:str): Possui um parâmetro obrigatório 'ano'. Possui dois métodos, um chamado "tabela_classificacao" e "rodadas".
@@ -19,8 +19,8 @@ Este repositório tem como objetivo fornecer exemplos e técnicas de Web Scrapin
                     'etapa': Parâmetro do tipo STR, aceitando individualmente um dos seguintes valores:
                         {"Final", "TerceiroLugar", "SemiFinal", "Quartas", "Oitavas"}
 
-Removido as classe **Brasileirão2022**  e **CopaDoMundo2022** do script *WebScrapingFutebol.py*
-Optimização das demais classes e métodos
+Removido as classe **Brasileirão2022**  e **CopaDoMundo2022** do script *WebScrapingFutebol.py*</br>
+Optimização das demais classes e métodos</br>
 
 ![Update](https://img.shields.io/badge/update%20data-13%2F02%2F2023-brightgreen)
 
