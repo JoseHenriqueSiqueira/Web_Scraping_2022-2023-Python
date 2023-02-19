@@ -3,24 +3,27 @@ Este repositório tem como objetivo fornecer exemplos e técnicas de Web Scrapin
 
 ![Update](https://img.shields.io/badge/update%20data-19%2F02%2F2023-brightgreen)
 
-   Resumo: Esse update deixou mais poderosas as classes que obtêm os dados do Brasileirão e da Copa do Mundo. Agora, em vez de ser possível obter apenas os dados de 2022, é possível obter os dados de diversas outras edições. Apesar de não ter havido uma mudança tão grande no código, a lógica foi aprimorada e melhorada!</br>
    Duas classes criadas no *WebScrapingFutebol.py*. **Brasileirao** e **CopaDoMundo**</br>
 
        class Brasileirao(ano:str): Possui um parâmetro obrigatório 'ano'. Possui dois métodos, um chamado "tabela_classificacao" e "rodadas".
           'ano': parâmetro do tipo STR, aceitando valores de '2003' a '2023'. Esse parâmetro é responsavel por qual edição do Brasileirão você quer ter informações.
-                tabela_classificacao(): Esse método retorna a tabela geral de classificação dos times.
-                rodadas(rodada:int): Esse método retorna todos os placares da rodada passada como parâmetro pelo usuário.
+                tabela_classificacao() -> list[tuple[str]]: Esse método retorna a tabela geral de classificação dos times.
+                rodadas(rodada:int) -> list[tuple[str]]: Esse método retorna todos os placares da rodada passada como parâmetro pelo usuário.
                     'rodada': parâmetro do tipo INT, aceitando valores de '1' a '38'.
 
        class CopaDoMundo(ano:str): Possui um parâmetro obrigatório 'ano'. Possui dois métodos, um chamado "fase_de_grupos" e "eliminatorias".
           'ano': parâmetro do tipo STR, aceitando valores de '1986' a '2022'. Os valores devem ser fornecidos em intervalos de quatro em quatro anos. Por exemplo. '1986', '1990', '1994', etc. Esse parâmetro é responsavel por qual edição da Copa Do Mundo você quer ter informações.
-                fase_de_grupos(): Esse método retorna a classificação geral e pontos gerais de todos os grupos da Copa Do Mundo.
-                eliminatorias(etapa:str): Retorna os jogos e placares de uma etapa específica passada como parâmetro pelo usuário
+                fase_de_grupos() -> list[tuple[str]]: Esse método retorna a classificação geral e pontos gerais de todos os grupos da Copa Do Mundo.
+                eliminatorias(etapa:str) -> list[tuple[str]]: Retorna os jogos e placares de uma etapa específica passada como parâmetro pelo usuário
                     'etapa': Parâmetro do tipo STR, aceitando individualmente um dos seguintes valores:
                         {"Final", "TerceiroLugar", "SemiFinal", "Quartas", "Oitavas"}
 
+Atualizado o tipo de retorno de dados. Agora é retornado uma lista, contendo varias tuplas e cada tupla tem dados string</br>
 Removido as classe **Brasileirão2022**  e **CopaDoMundo2022** do script *WebScrapingFutebol.py*</br>
 Optimização das demais classes e métodos</br>
+
+
+
 
 ![Update](https://img.shields.io/badge/update%20data-13%2F02%2F2023-brightgreen)
 
@@ -35,8 +38,10 @@ Optimização das demais classes e métodos</br>
 
         class ChromeDriver: Criada para optimizar o código e evitar que o usuário baixe o driver toda vez que for utilizar o script, assim deixando o script mais rapido e mais organizado.
 
-         Removido a classe "ChromeDriver" do script "WebScrapingFutebol"
-         Removido os scripts de Exemplos. Eles não estavam bem programados, e não tinha muita utilidade. Caso algum usuário necessite um exemplo, eu adiciono ao repositório.
+Removido a classe **ChromeDriver** do script *WebScrapingFutebol*
+Removido os scripts de Exemplos. Eles não estavam bem programados, e não tinha muita utilidade. Caso algum usuário necessite um exemplo, eu adiciono ao repositório.
+
+
 
 
 ![Update](https://img.shields.io/badge/update%20data-09%2F02%2F2023-brightgreen)
@@ -61,9 +66,11 @@ Optimização das demais classes e métodos</br>
         
         class ChromeDriver: Criada para optimizar o código e evitar que o usuário baixe o driver toda vez que for utilizar o script, assim deixando o script mais rapido e mais organizado.
         
-        Obs: Todos os métodos retornam uma variável do tipo 'list'
-        Removido os arquivos "BrasileiraoMain.py" e "CopaDoMundo22Main.py", pois não são mais necessários no projeto.
-        Futuros Update: Atualizar os scripts exemplos, melhorar o Script "TopônimosGentílicosPaísesMain.py" (Possivelmente transformá-lo em uma Classe) e adicionar mais WebScraping.
+Obs: Todos os métodos retornam uma variável do tipo 'list'
+Removido os arquivos "BrasileiraoMain.py" e "CopaDoMundo22Main.py", pois não são mais necessários no projeto.
+Futuros Update: Atualizar os scripts exemplos, melhorar o Script "TopônimosGentílicosPaísesMain.py" (Possivelmente transformá-lo em uma Classe) e adicionar mais WebScraping.
+
+
 
 
 ![Update](https://img.shields.io/badge/update%20data-30%2F12%2F2022-brightgreen)
