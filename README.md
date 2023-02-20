@@ -3,8 +3,7 @@ Este repositório tem como objetivo fornecer exemplos e técnicas de Web Scrapin
 
 ![Update](https://img.shields.io/badge/update%20data-19%2F02%2F2023-brightgreen)
 
-   Duas classes criadas no *WebScrapingFutebol.py*. **Brasileirao** e **CopaDoMundo**</br>
-
+Duas classes criadas no *WebScrapingFutebol.py*. **Brasileirao** e **CopaDoMundo**</br>
        class Brasileirao(ano:str): Possui um parâmetro obrigatório 'ano'. Possui dois métodos, um chamado "tabela_classificacao" e "rodadas".
           'ano': parâmetro do tipo STR, aceitando valores de '2003' a '2023'. Esse parâmetro é responsavel por qual edição do Brasileirão você quer ter informações.
                 tabela_classificacao() -> list[tuple[str]]: Esse método retorna a tabela geral de classificação dos times.
@@ -70,42 +69,13 @@ Obs: Todos os métodos retornam uma variável do tipo 'list'
 Removido os arquivos "BrasileiraoMain.py" e "CopaDoMundo22Main.py", pois não são mais necessários no projeto.
 Futuros Update: Atualizar os scripts exemplos, melhorar o Script "TopônimosGentílicosPaísesMain.py" (Possivelmente transformá-lo em uma Classe) e adicionar mais WebScraping.
 
-
-
-
-![Update](https://img.shields.io/badge/update%20data-30%2F12%2F2022-brightgreen)
-<pre>
-    Obtendo informações dos Gentílicos e Topônimos de todos os Países
-</pre>
-![Update](https://img.shields.io/badge/update%20data-28%2F12%2F2022-brightgreen)
-<pre>
-    Obtendo informações das oitavas de finais até a Final da Copa do Mundo 2022.
-</pre>
-![Update](https://img.shields.io/badge/update%20data-22%2F12%2F2022-brightgreen)
-<pre>
-    Obtendo informações do Campeonato Brasileiro 2022.
-</pre>
-
 ## Requirements
-![Python](https://img.shields.io/badge/Python-v3.9-blue)
-
-### Requerimentos necessários para /Main's
-[Selenium](https://pypi.org/project/selenium/)</br>
-[Webdriver_manager](https://pypi.org/project/webdriver-manager/)</br>
-[Subprocess](https://docs.python.org/3/library/subprocess.html)</br>
-[Os](https://docs.python.org/3/library/os.html)</br>
-[Google Chrome](https://www.google.com/intl/pt-BR/chrome/)</br>
-
-### Requerimentos necessários para *Exemplo.py
-[PyQt5](https://pypi.org/project/PyQt5/)</br>
-[Selenium](https://pypi.org/project/selenium/)</br>
-[Webdriver_manager](https://pypi.org/project/webdriver-manager/)</br>
-[Subprocess](https://docs.python.org/3/library/subprocess.html)</br>
-[Time](https://docs.python.org/3/library/time.html)</br>
-[Threading](https://docs.python.org/3/library/threading.html)</br>
-[os](https://docs.python.org/3/library/os.html)</br>
-[sys](https://docs.python.org/3/library/sys.html)</br>
-[Google Chrome](https://www.google.com/intl/pt-BR/chrome/)</br>
+ - [Python3.9](https://www.python.org/)
+ - [Selenium](https://pypi.org/project/selenium/)
+ - [Webdriver_manager](https://pypi.org/project/webdriver-manager/)
+ - [Subprocess](https://docs.python.org/3/library/subprocess.html)
+ - [os](https://docs.python.org/3/library/os.html)
+ - [Google Chrome](https://www.google.com/intl/pt-BR/chrome/)
 
 ## Autores
 [José Henrique da Silva Siqueira](https://www.linkedin.com/in/jos%C3%A9-henrique-siqueira-852664218/)
