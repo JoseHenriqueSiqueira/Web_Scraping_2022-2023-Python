@@ -9,8 +9,13 @@ Este repositório tem como objetivo fornecer exemplos e técnicas de Web Scrapin
  - [os](https://docs.python.org/3/library/os.html)
  - [Google Chrome](https://www.google.com/intl/pt-BR/chrome/)
 
+## Updates
+[Notas de Atualização](/Updates/Updates.md)
+
 ## Documentação
-[Documentações](/Docs)
+ - [ChromeWebDriver.py](/Docs/ChromeWebDriverDOC.md)
+ - [WebScrapingFutebol.py](/Docs/WebScrapingFutebolDOC.md)
+ - [TopônimosGentílicosPaíses.py](/Docs/Top%C3%B4nimosGent%C3%ADlicosPa%C3%ADsesDOC.md)
 
 ## Autores
 [José Henrique da Silva Siqueira](https://www.linkedin.com/in/jos%C3%A9-henrique-siqueira-852664218/)
