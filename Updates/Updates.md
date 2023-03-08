@@ -1,3 +1,7 @@
+![Update](https://img.shields.io/badge/update%20data-08%2F03%2F2023-brightgreen)
+
+Criado um script com scripts testes [WebScraping.py](/tests/WebScraping.py).
+
 ![Update](https://img.shields.io/badge/update%20data-19%2F02%2F2023-brightgreen)
 
 Duas classes criadas no *WebScrapingFutebol.py*. **Brasileirao** e **CopaDoMundo**</br>
