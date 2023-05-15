@@ -45,6 +45,17 @@ class CopaDoBrasil(ChromeDriver):
         dados = [tuple(placar.text.split('\n')) for placar in tabela]
         return dados
 
+class Nomes(ChromeDriver):
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.driver.set_window_size(1920, 1080)
+        self.driver.get(f"https://pt.wikipedia.org/wiki/Os_100_livros_do_s%C3%A9culo_XX_segundo_Le_Monde")
+
+    def get(self):
+        elementos = self.driver.find_elements(By.XPATH, '//*[@id="mw-content-text"]/div[1]/table[1]/tbody/tr[*]/td[2]')
+        for element in elementos:
+             print(element.text.split('\n'))
 if __name__ == "__main__":
-     x = CopaDoBrasil('2016').etapa(1)
-     print(x)
+    x = Nomes()
+    x.get()
