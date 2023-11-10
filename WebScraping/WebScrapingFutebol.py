@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from ChromeWebDriver import ChromeDriver
+from EdgeWebDriver import EdgeDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -33,7 +34,7 @@ class CopaDoBrasil2023(ChromeDriver):
         dados = [tuple(placar.text.split('\n')) for placar in placares]
         return dados
 
-class ChampionsLeague2023(ChromeDriver):
+class ChampionsLeague2023(EdgeDriver):
     def __init__(self):
         super().__init__()
         self.driver.get("https://ge.globo.com/futebol/futebol-internacional/liga-dos-campeoes/")
@@ -78,7 +79,7 @@ class ChampionsLeague2023(ChromeDriver):
         dados = [tuple(placar.text.split('\n')) for placar in placares]
         return dados
 
-class Brasileirao(ChromeDriver):
+class Brasileirao(EdgeDriver):
     def __init__(self, ano:str) -> None:
         super().__init__()
         if not isinstance(ano, str):
@@ -91,11 +92,39 @@ class Brasileirao(ChromeDriver):
         url = f'https://ge.globo.com/futebol/brasileirao-serie-a/{ano}' if ano != '2023' else 'https://ge.globo.com/futebol/brasileirao-serie-a/'
         self.driver.get(url)
     
-    def tabela_classificacao(self) -> list[tuple[str]]:
-        Posições = self.driver.find_elements(By.CLASS_NAME, "classificacao__equipes--posicao")
-        Nomes = self.driver.find_elements(By.CLASS_NAME, "classificacao__equipes--nome")
-        Pontos = self.driver.find_element(By.XPATH, "//*[@id='classificacao__wrapper']/article/section[1]/div/table[2]/tbody").text.split('\n')
-        dados = [(posição.text, nome.text, pontos) for posição, nome, pontos in zip(Posições, Nomes, Pontos)]
+    def tabela_classificacao(self) -> list[dict[int, str]]:
+        """
+        Método para obter a classificação completa do ano do brasilerão especificado no constructor
+
+        ### Retorno :
+        list: Uma lista de dicionários representando a tabela do Brasileirão. Cada dicionário contém informações sobre um time.
+
+        ### Exemplos :
+        tabela = tabela_classificacao()\n
+        for time in tabela:
+            print(time)\n
+        ### Saída esperada:
+        {'Posição': int, 'Nome': str, 'Pontos': int, 'Jogos': int, 'Vitorias': int, 'Empates': int, 'Derrotas': int, 'Gols_Pro': int, 'Gols_Contra': int, 'Saldo_Gols': int, 'Aproveitamento': int, 'Ultimos_Jogos': [str, str, str, str, str]}\n
+        ...
+        """
+        tabela = self.driver.execute_script("return classificacao")
+        dados = [
+            {
+                'Posição': time['ordem'],
+                'Nome': time['nome_popular'],
+                'Pontos': time['pontos'],
+                'Jogos': time['jogos'],
+                'Vitorias': time['vitorias'],
+                'Empates': time['empates'],
+                'Derrotas': time['derrotas'],
+                'Gols_Pro': time['gols_pro'],
+                'Gols_Contra': time['gols_contra'],
+                'Saldo_Gols': time['saldo_gols'],
+                'Aproveitamento': time['aproveitamento'],
+                'Ultimos_Jogos': time['ultimos_jogos']
+            }
+            for time in tabela['classificacao']
+        ]
         return dados
 
     def rodadas(self, rodada:int) -> list[tuple[str]]:
@@ -161,3 +190,9 @@ class CopaDoMundo(ChromeDriver):
         placares = self.driver.find_elements(By.CLASS_NAME, "placar")
         dados = [tuple(placar.text.split('\n')) for placar in placares]
         return dados
+
+if __name__ == "__main__":
+    brasileirao = Brasileirao('2023')
+    tabela = brasileirao.tabela_classificacao()
+    for time in tabela:
+        print(time)
