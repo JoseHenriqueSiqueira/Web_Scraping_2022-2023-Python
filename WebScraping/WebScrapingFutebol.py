@@ -411,7 +411,7 @@ class Brasileirao(EdgeDriver):
 
 class CopaDoMundo(EdgeDriver):
 
-    def __init__(self, ano:str):
+    def __init__(self, ano:str, web:bool = False):
 
         if not isinstance(ano, str):
             raise TypeError("Parâmetro 'ano' deve ser uma string")
@@ -420,14 +420,15 @@ class CopaDoMundo(EdgeDriver):
         if ano not in ANOS_PERMITIDOS:
             raise ValueError(f"Ano inválido. Permitidos {ANOS_PERMITIDOS}")
         
-        # self.driver.set_window_size(1920, 1080)
-        # self.driver.get(f'https://ge.globo.com/futebol/copa-do-mundo/{ano}/')
-        # print(f"'{ano}':'{self.driver.execute_script('return classificacao.fases_navegacao[3].slug')}'")
-        # self._seta_esquerda = self.driver.find_elements(By.CLASS_NAME, "navegacao-fase__seta-esquerda")
-        # self._seta_direita = self.driver.find_elements(By.CLASS_NAME, "navegacao-fase__seta-direita")
-        # self.wait = WebDriverWait(self.driver, 15)
-        self.__ano = ano
-        self.__uuid = self.__get_uuid()
+        if web:
+            super().__init__()
+            self.driver.get(f'https://ge.globo.com/futebol/copa-do-mundo/{ano}/')
+            self.__uuid = self.driver.execute_script("return window.cdaaas.PAGE_ANALYTICS_DATA.contentId") # Retorna o UUID da API
+            self.fase = self.driver.execute_script("return fase.slug") # Retorna o slug da fase para ser usado na URL da API.
+            self.driver.quit()
+        else:
+            self.__ano = ano
+            self.__uuid = self.__get_uuid()
 
     def fase_de_grupos(self) -> list[tuple[str]]:
         for seta in self._seta_esquerda:
@@ -480,94 +481,52 @@ class CopaDoMundo(EdgeDriver):
 
         return uuid.get(self.__ano)
 
-    def __fase_grupos(self):
-
-        if self.__ano == '1998':
-            return 'copa98-primeira-fase'
-        if self.__ano == '2006':
-            return 'copa2006-primeira-fase'
-        if self.__ano == '2010':
-            return 'primeira-fase'
-        
-        return f"fase-grupos-copa-do-mundo-{self.__ano}"
-    
-    def __fase_oitavas(self):
-
-        if self.__ano == '1998':
-            return 'copa98-oitavas'
-        if self.__ano == '2006':
-            return 'copa2006-oitavas'
-        if self.__ano == '2010':
-            return 'oitavas-de-final'
-        
-        return f"oitavas-copa-do-mundo-{self.__ano}"
-
-    def __fase_quartas(self):
-
-        if self.__ano == '1998':
-            return 'copa98-quartas'
-        if self.__ano == '2006':
-            return 'copa2006-quartas'
-        if self.__ano == '2010':
-            return 'quartas-de-final'
-        
-        return f"quartas-copa-do-mundo-{self.__ano}"
-
-    def __fase_semi_final(self):
-
-        if self.__ano == '1998':
-            return 'copa98-semifinal'
-        if self.__ano == '2006':
-            return 'copa2006-semifinal'
-        if self.__ano == '2010':
-            return 'semifinal'
-        
-        return f"semifinal-copa-do-mundo-{self.__ano}"
-
-    def __fase_terceiro(self):
-        return f"terceiro-copa-do-mundo-{self.__ano}"
-
-    def __fase_final(self):
-
-        if self.__ano == '1998':
-            return 'copa98-final'
-        if self.__ano == '2006':
-            return 'copa2006-final'
-        if self.__ano == '2010':
-            return 'final'
-        
-        return f"final-copa-do-mundo-{self.__ano}"
-
     def __fase(self, etapa):
 
-        fase = {
-            'playoffs':'playoffs-liga-dos-campeoes-2023-2024',
-            'grupos': self.__fase_grupos(),
-            'oitavas': self.__fase_oitavas(),
-            'quartas': self.__fase_quartas(),
-            'semi_final': self.__fase_semi_final(),
-            'terceiro': self.__fase_terceiro(),
-            'final': self.__fase_final(),
+        fases = {
+            'grupos': {
+                '1998': 'copa98-primeira-fase',
+                '2006': 'copa2006-primeira-fase',
+                '2010': 'primeira-fase',
+                'default': f"fase-grupos-copa-do-mundo-{self.__ano}"
+            },
+            'oitavas': {
+                '1998': 'copa98-oitavas',
+                '2006': 'copa2006-oitavas',
+                '2010': 'oitavas-de-final',
+                'default': f"oitavas-copa-do-mundo-{self.__ano}"
+            },
+            'quartas': {
+                '1998': 'copa98-quartas',
+                '2006': 'copa2006-quartas',
+                '2010': 'quartas-de-final',
+                'default': f"quartas-copa-do-mundo-{self.__ano}"
+            },
+            'semi_final': {
+                '1998': 'copa98-semifinal',
+                '2006': 'copa2006-semifinal',
+                '2010': 'semifinal',
+                'default': f"semifinal-copa-do-mundo-{self.__ano}"
+            },
+            'terceiro': {
+                'default': f"terceiro-copa-do-mundo-{self.__ano}"
+            },
+            'final': {
+                '1998': 'copa98-final',
+                '2006': 'copa2006-final',
+                '2010': 'final',
+                'default': f"final-copa-do-mundo-{self.__ano}"
+            }
         }
 
-        return fase.get(etapa)
+        return fases[etapa].get(self.__ano, fases[etapa]['default'])
 
-    def test(self, etapa):
+    def fase_copa(self, etapa):
 
-        fase = self.__fase(etapa)
+        fase = self.__fase(etapa) if not hasattr(self, 'fase') else self.fase
         url = f"https://api.globoesporte.globo.com/tabela/{self.__uuid}/fase/{fase}/classificacao/"
         resposta = requests.get(url).json()
-        return resposta['fase']['slug']
+        return resposta
 
 if __name__ == "__main__":
-    anos = ['1986', '1990', '1994', '1998', '2002', '2006', '2010', '2014', '2018', '2022']
-    test = CopaDoMundo('2022')
-    for ano in anos:
-       print(CopaDoMundo(ano).test('grupos'))
-       print(CopaDoMundo(ano).test('oitavas'))
-       print(CopaDoMundo(ano).test('quartas'))
-       print(CopaDoMundo(ano).test('semi_final'))
-       print(CopaDoMundo(ano).test('terceiro'))
-       print(CopaDoMundo(ano).test('final'))
-    # copa = CopaDoMundo('2022')
-    # print(copa.test(), sep='\n\n')
+    pass
