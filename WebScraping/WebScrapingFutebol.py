@@ -427,43 +427,9 @@ class CopaDoMundo(EdgeDriver):
             self.fase = self.driver.execute_script("return fase.slug") # Retorna o slug da fase para ser usado na URL da API.
             self.driver.quit()
         else:
-            self.__ano = ano
             self.__uuid = self.__get_uuid()
-
-    def fase_de_grupos(self) -> list[tuple[str]]:
-        for seta in self._seta_esquerda:
-            while "navegacao-fase__setas-ativa" in seta.get_attribute("class"):
-                self.wait.until(EC.element_to_be_clickable(seta))
-                seta.click()
-        Posiçoes = self.driver.find_elements(By.CLASS_NAME, "classificacao__equipes--posicao")
-        Nomes = self.driver.find_elements(By.CLASS_NAME, "classificacao__equipes--time")
-        Pontos = self.driver.find_elements(By.XPATH, f"//*[@id='classificacao__wrapper']/article[*]/section[1]/div/table[2]/tbody")
-        Pontos = [ponto for pontos in Pontos for ponto in pontos.text.split('\n')]
-        dados = [(posição.text, nome.text, pontos) for posição, nome, pontos in zip(Posiçoes, Nomes, Pontos)]
-        return dados
-
-    def eliminatorias(self, etapa:str) -> list[tuple[str]]:
-        if not isinstance(etapa, str):
-            raise TypeError("O parâmetro 'etapa' deve ser uma string")
-        etapas = {
-            "Final":0, "TerceiroLugar":1, "SemiFinal":2, "Quartas":3, "Oitavas":4
-        }
-        try:
-            num_cliques = etapas[etapa]
-        except:
-            raise ValueError(f"Parâmetro 'etapa' Inválido: {etapa}. Verifique os parâmetros permitidos na documentação.")
-        for seta in self._seta_direita:
-            while "navegacao-fase__setas-ativa" in seta.get_attribute("class"):
-                self.wait.until(EC.element_to_be_clickable(seta))
-                seta.click()
-        for _ in range(num_cliques):
-            self.wait.until(EC.element_to_be_clickable(self._seta_esquerda[0]))
-            self._seta_esquerda[0].click()
-        self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'placar')))
-        placares = self.driver.find_elements(By.CLASS_NAME, "placar")
-        dados = [tuple(placar.text.split('\n')) for placar in placares]
-        return dados
-
+            self.__ano = ano
+            
     def __get_uuid(self):
 
         uuid = {
@@ -521,12 +487,92 @@ class CopaDoMundo(EdgeDriver):
 
         return fases[etapa].get(self.__ano, fases[etapa]['default'])
 
+    def __grupos(self, resposta):
+        
+        dados = [
+            {
+                grupo:
+                [
+                    {
+                        'Nome': time['nome_popular'],
+                        'Variacao': time['variacao'],
+                        'Pontos': time['pontos'],
+                        'Jogos': time['jogos'],
+                        'Vitorias': time['vitorias'],
+                        'Empates': time['empates'],
+                        'Derrotas': time['derrotas'],
+                        'Gols_pro': time['gols_pro'],
+                        'Gols_contra': time['gols_contra'],
+                        'Saldo_gols': time['saldo_gols'],
+                        'Aproveitamento': time['aproveitamento'],
+                        'Ultimos_jogos': time['ultimos_jogos'],
+                    }
+                    for time in grupo['classificacao']
+                ]
+            }
+            for grupo in resposta
+        ]
+
+        return dados
+
+    def __oitavas(self, resposta):
+        return self.__gerar_dados_jogos(resposta)
+
+    def __quartas(self, resposta):
+        return self.__gerar_dados_jogos(resposta)
+
+    def __semifinal(self, resposta):
+        return self.__gerar_dados_jogos(resposta)
+
+    def __terceiro(self, resposta):
+        return self.__gerar_dados_jogos(resposta)
+    
+    def __final(self, resposta):
+        return self.__gerar_dados_jogos(resposta)
+
+    def __gerar_dados_jogos(self, resposta):
+
+        dados = [
+            {
+                chave['nome']:
+                {
+                    'Mandante': partida['equipes']['mandante'].get('nome_popular'),
+                    'Visitante': partida['equipes']['visitante'].get('nome_popular'),
+                    'Data_realizacao': partida['data_realizacao'],
+                    'Horario_realizacao': partida['hora_realizacao'],
+                    'Jogo_rolando': partida['jogo_ja_comecou'],
+                    'Placar_mandante': partida['placar_oficial_mandante'],
+                    'Placa_visitante': partida['placar_oficial_visitante'],
+                    'Placar_penaltis_mandante': partida['placar_penaltis_mandante'],
+                    'Placar_penaltis_visitante': partida['placar_penaltis_visitante'],
+                }
+                for partida in chave['jogos']
+            }
+            for jogo in resposta['secao']
+            for chave in jogo['chave']
+        ]
+
+        return dados
+
     def fase_copa(self, etapa):
 
-        fase = self.__fase(etapa) if not hasattr(self, 'fase') else self.fase
-        url = f"https://api.globoesporte.globo.com/tabela/{self.__uuid}/fase/{fase}/classificacao/"
-        resposta = requests.get(url).json()
-        return resposta
+        fase_funcoes = {
+            'grupos': self.__grupos,
+            'oitavas': self.__oitavas,
+            'quartas': self.__quartas,
+            'semi_final': self.__semifinal,
+            'terceiro': self.__terceiro,
+            'final': self.__final
+        }
+
+        if etapa in fase_funcoes:
+            fase = self.__fase(etapa) if not hasattr(self, 'fase') else self.fase
+            url = f"https://api.globoesporte.globo.com/tabela/{self.__uuid}/fase/{fase}/classificacao/"
+            resposta = requests.get(url).json()
+            return fase_funcoes[etapa](resposta)
+        else:
+            # Tratamento para fase inválida
+            raise ValueError("Fase inválida. Fases disponíveis ['grupos', 'oitavas', 'quartas', 'semi_final', 'terceiro', 'final']") 
 
 if __name__ == "__main__":
-    pass
+    print(CopaDoMundo('2022', True).fase_copa('grupos'), sep='\n')
