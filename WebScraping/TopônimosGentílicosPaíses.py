@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
-from ChromeWebDriver import ChromeDriver
+from EdgeWebDriver import EdgeDriver
 
-class TopônimosGentilicos(ChromeDriver):
+class TopônimosGentilicos(EdgeDriver):
     def __init__(self):
          super().__init__()
          self.driver.get('http://funag.gov.br/manual/index.php?title=Top%C3%B4nimos_e_gent%C3%ADlicos')
@@ -25,3 +25,5 @@ class TopônimosGentilicos(ChromeDriver):
             return dados
         except:
             raise Exception(ERRO)
+
+print(TopônimosGentilicos().procurar_pais("Brasil"))
