@@ -1,3 +1,10 @@
+![Update](https://img.shields.io/badge/update%20data-18%2F11%2F2023-brightgreen)
+
+Refatorando código!
+Agora o web scraping do futebol ficou mais limpo e completo! Literalmente uma API atualizada em tempo real! Muito rápida!
+Agora o navegador para webscraping é o Edge. Também atualizei como ele é aberto, deixando o código muito mais simples: **EdgeWebDriver.py**.
+Algumas classes foram alteradas como a **Brasileirão**, **CopaDoMundo** e **ChampionsLeague**. Por agora removi a **CopaDoBrasil**.
+
 ![Update](https://img.shields.io/badge/update%20data-08%2F03%2F2023-brightgreen)
 
 Criado um script com scripts testes [WebScraping.py](/tests/WebScraping.py).

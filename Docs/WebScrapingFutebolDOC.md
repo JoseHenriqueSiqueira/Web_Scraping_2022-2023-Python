@@ -1,18 +1,4 @@
-## class CopaDoBrasil2023 (ChromeWebDriver):
-### def __init\__():
-Método construtor da classe, referência para os demais métodos.
-   
-### def etapa(etapa) :
-Método responsavel por obter jogos e placares de uma etapa específica passada como parâmetro pelo usuário
-| Parâmetro   | Tipo       | Descrição                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `etapa`      | `string` | **Obrigatório**. Esse parâmetro é responsavel por qual fase da Copa DO Brasil 2023 você quer ter informações. Aceitando valores "PrimeiraFase", "SegundaFase", "TerceiraFase", "Oitavas", "Quartas", "SemiFinal", "Final".|
-
-|Retorno| Tipo       | Descrição                                   |
-|-------| :--------- | :------------------------------------------ |
-|`dados`| `list` | Retorna uma lista de tuplas, onde cada tupla contém um conjunto de strings.|
-
-## class ChampionsLeague2023 (ChromeWebDriver):
+## class ChampionsLeague (ChromeWebDriver):
 ### def __init\__():
 Método construtor da classe, referência para os demais métodos.
    
