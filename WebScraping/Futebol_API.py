@@ -1,5 +1,4 @@
 from EdgeWebDriver import EdgeDriver
-from selenium.webdriver.support import expected_conditions as EC
 import requests
 
 class ChampionsLeague():
@@ -540,7 +539,3 @@ class CopaDoMundo(EdgeDriver):
         else:
             # Tratamento para fase inválida
             raise ValueError("Fase inválida. Fases disponíveis ['grupos', 'oitavas', 'quartas', 'semi_final', 'terceiro', 'final']") 
-
-if __name__ == "__main__":
-    brasileirao = Brasileirao('2023')
-    print(*brasileirao.tabela_classificacao(), sep='\n\n')

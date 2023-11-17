@@ -25,5 +25,3 @@ class TopônimosGentilicos(EdgeDriver):
             return dados
         except:
             raise Exception(ERRO)
-
-print(TopônimosGentilicos().procurar_pais("Brasil"))
